@@ -1,0 +1,3 @@
+#!/bin/bash
+python_code="$PYCODE"
+echo "$python_code" | python
