@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 str = "Holberton School"
 str = "Holberton School" * 3
 print(str)
