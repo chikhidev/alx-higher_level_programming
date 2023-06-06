@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 str = "Holberton School"
-for i in range(3):
-    print(str, end = ("\n" if i == 2 else ""))
-
-print(str[:9])
+str = "Holberton School" * 3
+print(str)
+print(str[0:9])
