@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
-* check_cycle - function in C that checks if a singly linked list has a cycle in it.
+* check_cycle - function in C that checks list has a cycle
 * @list: list
 * Return: int
 */
@@ -17,10 +17,11 @@ return (0);
 slow_ptr = list;
 fast_ptr = list->next;
 
-while (slow_ptr != fast_ptr) {
-if (fast_ptr == NULL || fast_ptr->next == NULL) {
+while (slow_ptr != fast_ptr)
+{
+if (fast_ptr == NULL || fast_ptr->next == NULL)
 return (0);
-}
+
 slow_ptr = slow_ptr->next;
 fast_ptr = fast_ptr->next->next;
 }
