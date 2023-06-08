@@ -7,4 +7,4 @@ if __name__ == "__main__":
     for i in range(argc - 1):
         res += int(sys.argv[i + 1])
 
-    print("{}".format(total))
+    print("{}".format(res))
