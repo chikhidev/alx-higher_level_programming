@@ -1,0 +1,5 @@
+#!/bin/bash
+chmod +x *.py
+git add .
+git commit models
+git push origin master

@@ -1,0 +1,5 @@
+#!/bin/bash
+chmod +x
+git add .
+git commit -m models
+git push origin master
