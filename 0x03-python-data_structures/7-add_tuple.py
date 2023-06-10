@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
     res = ()
-    a = len(tuple_a) - 1
-    b = len(tuple_b) - 1
-    length = min(a, b)
+    length = max(len(tuple_a), len(tuple_b))
     i = 0
     while i <= length:
-        res[i] += (tuple_a[i] + tuple_b[i],)
-        i+=1
+        left = tuple_a[i] if i < len(tuple_a) else 0
+        right = tuple_b[i] if i < len(tuple_b) else 0
+        res += (left + right,)
     return res
+
