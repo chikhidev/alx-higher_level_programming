@@ -4,7 +4,7 @@
 
 
 class Square:
-    """Squaare inside"""
+    """Square inside"""
 
     def __init__(self, size=0):
         """init"""
@@ -15,5 +15,5 @@ class Square:
         self.__size = size
 
     def area(self):
-        """returns the current square area."""
+        """Return"""
         return(self.__size * self.__size)
