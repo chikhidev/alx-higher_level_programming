@@ -1,5 +1,4 @@
 #!/bin/bash
-chmod +x
 git add .
-git commit -m models
+git commit -m PUSH
 git push origin master
