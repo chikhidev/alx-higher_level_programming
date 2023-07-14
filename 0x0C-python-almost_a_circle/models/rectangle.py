@@ -68,4 +68,7 @@ class Rectangle(Base):
     def id(self, id):
         self.validate(id)
         self.Base.id = id
-    
+
+
+    def area(self):
+        return self.__x * self.__y
