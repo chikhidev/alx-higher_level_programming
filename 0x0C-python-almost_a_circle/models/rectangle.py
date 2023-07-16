@@ -74,10 +74,11 @@ class Rectangle(Base):
         return self.__x * self.__y
     
     def display(self):
-        for i in range(0, self.__y):
-            for j in range(0, self.__x):
-                print('#', end='')
-            print()
+        if self.__x > 0 and self.__y > 0 :
+            for i in range(0, self.__y):
+                for j in range(0, self.__x):
+                    print('#', end='')
+                print()
 
     def __str__(self):
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.Base.id,
