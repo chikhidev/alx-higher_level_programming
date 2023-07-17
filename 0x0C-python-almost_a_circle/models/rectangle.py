@@ -3,7 +3,7 @@
     rectangle.py module
 """
 
-validate_integer_property = __import__('helpers').validate_integer_property
+from models.helpers import validate_integer_property
 
 class Rectangle:
     """
@@ -117,21 +117,22 @@ class Rectangle:
         """
         return {'x': self.__x, 'y': self.__y, 'id': self.id, 'height': self.__height, 'width': self.__width}
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
-        Assigns arguments to each attribute of the Rectangle.
+        Assigns key/value arguments to attributes of the Rectangle.
 
         Args:
-            *args: Variable length argument list. Can be used in the order (id, width, height, x, y).
+            *args: Variable length argument list. Can be used in the order (width, height, x, y).
+            **kwargs: Variable length keyword argument list. Each key represents an attribute of the Rectangle.
+
+        Example:
+            r = Rectangle(2, 3)
+            r.update(5, height=10, y=2)
         """
-        num_args = len(args)
-        if num_args >= 1:
-            self.id = args[0]
-        if num_args >= 2:
-            self.width = args[1]
-        if num_args >= 3:
-            self.height = args[2]
-        if num_args >= 4:
-            self.x = args[3]
-        if num_args >= 5:
-            self.y = args[4]
+        if args:
+            attributes = ['width', 'height', 'x', 'y']
+            for i, value in enumerate(args):
+                setattr(self, attributes[i], value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)

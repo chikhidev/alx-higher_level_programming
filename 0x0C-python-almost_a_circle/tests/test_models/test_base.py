@@ -1,28 +1,34 @@
 #!/usr/bin/python3
-""" 0-main """
-from models.base import Base
+"""
+Unittest for Base class
+"""
 import unittest
+from models.base import Base
 
 
-class TestBase(unittest.TestCase):
+class TestBaseClass(unittest.TestCase):
+    """Test cases for the Base class"""
 
-    def test_main(self):
+    def setUp(self):
+        """Set up test case"""
+        self.inst = Base(5)
 
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
+    def tearDown(self):
+        """Tear down test case"""
+        Base._Base__nb_objects = 0
 
-        b2 = Base()
-        self.assertEqual(b2.id, 2)
+    def test_nb_objects_default(self):
+        """Test the default value of __nb_objects"""
+        self.assertEqual(Base._Base__nb_objects, 0)
 
-        b3 = Base()
-        self.assertEqual(b3.id, 3)
+    def test_nb_objects_increment(self):
+        """Test the increment of __nb_objects when creating a new instance"""
+        self.inst = Base()
+        self.assertEqual(Base._Base__nb_objects, 1)
 
-        b4 = Base(12)
-        self.assertEqual(b4.id, 12)
-
-        b5 = Base()
-        self.assertEqual(b5.id, 4)
-
+    def test_id(self):
+        """Test the id attribute of the instance"""
+        self.assertEqual(self.inst.id, 5)
 
 if __name__ == "__main__":
     unittest.main()
