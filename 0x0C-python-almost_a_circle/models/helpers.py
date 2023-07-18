@@ -10,7 +10,7 @@ def validate_integer_property(value, prop_name):
             TypeError: If value is not an integer.
             ValueError: If value is less than or equal to 0.
         """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(f"{prop_name} must be an integer")
         if value <= 0:
             raise ValueError(f"{prop_name} must be > 0")
