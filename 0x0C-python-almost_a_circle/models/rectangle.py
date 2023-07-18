@@ -40,7 +40,7 @@ class Rectangle(Base):
         Returns:
             str: String representation of the rectangle in the format [Rectangle] (<id>) <x>/<y> - <width>/<height>.
         """
-        idd = self.Base.id
+        idd = self.id
         x = self.__x
         y = self.__y
         w = self.__width
