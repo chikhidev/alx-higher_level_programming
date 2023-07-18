@@ -135,9 +135,14 @@ class Rectangle(Base):
             r.update(5, height=10, y=2)
         """
         if args:
-            attributes = ['width', 'height', 'x', 'y']
+            attributes = ['id', 'width', 'height', 'x', 'y']
             for i, value in enumerate(args):
+                if i > 4 :
+                    break
                 setattr(self, attributes[i], value)
+                    
         elif kwargs:
             for key, value in kwargs.items():
+                if i > 4 :
+                    break
                 setattr(self, key, value)
