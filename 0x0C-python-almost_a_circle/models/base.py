@@ -2,6 +2,7 @@
 """
 base.py module
 """
+import turtle
 import json
 import csv
 
@@ -143,3 +144,51 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return json.dumps([])
         return json.dumps(list_dictionaries)
+    
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Draw all Rectangles and Squares using the Turtle graphics module.
+
+        Args:
+            list_rectangles (list): List of Rectangle instances.
+            list_squares (list): List of Square instances.
+        """
+        #tha screen
+        screen = turtle.Screen()
+        screen.setup(width=800, height=600)
+
+        #za object
+        t = turtle.Turtle()
+        #speed
+        t.speed(1)
+
+        #draw the rectangle
+        for rect in list_rectangles:
+            t.penup()
+            t.goto(rect.x, rect.y)
+            t.pendown()
+            t.forward(rect.width)
+            t.left(90)
+            t.forward(rect.height)
+            t.left(90)
+            t.forward(rect.width)
+            t.left(90)
+            t.forward(rect.height)
+            t.left(90)
+
+        #draw the square
+        for square in list_squares:
+            t.penup()
+            t.goto(square.x, square.y)
+            t.pendown()
+            t.forward(square.size)
+            t.left(90)
+            t.forward(square.size)
+            t.left(90)
+            t.forward(square.size)
+            t.left(90)
+            t.forward(square.size)
+            t.left(90)
+
+        screen.exitonclick()
