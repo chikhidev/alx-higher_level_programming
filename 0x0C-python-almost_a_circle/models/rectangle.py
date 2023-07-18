@@ -22,9 +22,13 @@ class Rectangle(Base):
             y (int, optional): y-coordinate of the rectangle's position. Default is 0.
             id (any, optional): Unique identifier for the rectangle. Default is None.
         """
+        validate_integer_property(width, 'width')
         self.__width = width
+        validate_integer_property(height, 'height')
         self.__height = height
+        validate_integer_property(x, 'x')
         self.__x = x
+        validate_integer_property(y, 'y')
         self.__y = y
         super().__init__(id)
 
