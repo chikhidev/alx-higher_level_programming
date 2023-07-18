@@ -142,7 +142,9 @@ class Rectangle(Base):
                 setattr(self, attributes[i], value)
                     
         elif kwargs:
+            count = 0
             for key, value in kwargs.items():
-                if i > 4 :
+                if count > 4 :
                     break
                 setattr(self, key, value)
+                count+=1
