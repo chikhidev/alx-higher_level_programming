@@ -4,8 +4,9 @@
 """
 
 from models.helpers import validate_integer_property
+from models.base import Base
 
-class Rectangle:
+class Rectangle(Base):
     """
     Rectangle class
     """
@@ -21,10 +22,10 @@ class Rectangle:
             y (int, optional): y-coordinate of the rectangle's position. Default is 0.
             id (any, optional): Unique identifier for the rectangle. Default is None.
         """
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
         super().__init__(id)
 
 
@@ -35,7 +36,7 @@ class Rectangle:
         Returns:
             str: String representation of the rectangle in the format [Rectangle] (<id>) <x>/<y> - <width>/<height>.
         """
-        idd = self.id
+        idd = self.Base.id
         x = self.__x
         y = self.__y
         w = self.__width
