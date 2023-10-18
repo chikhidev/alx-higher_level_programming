@@ -1,0 +1,2 @@
+-- cmnt
+SHOW DATABASES;
